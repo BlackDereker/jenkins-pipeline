@@ -4,8 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building...'
-        bat(script: 'make', returnStatus: true)
         archiveArtifacts(artifacts: '**/target/.o', fingerprint: true)
+        sh 'make'
       }
     }
 
