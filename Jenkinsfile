@@ -1,5 +1,10 @@
 pipeline {
-  agent none
+  agent {
+    node {
+      label 'Make'
+    }
+
+  }
   stages {
     stage('Build') {
       steps {
